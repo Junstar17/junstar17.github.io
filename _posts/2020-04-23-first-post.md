@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Jekyll!"
+title: "Welcome to Git!"
 date: 2020-04-23 13:26:28 -0400
 categories: jekyll update
 ---

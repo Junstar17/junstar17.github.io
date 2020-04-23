@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Jekyll!"
+title: "CI/CD Tools 용어정리"
 date: 2020-04-23 14:30:28 -0400
 categories: CI/CD update
 ---

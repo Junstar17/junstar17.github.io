@@ -3,7 +3,8 @@ title: "CI/CD Tools 용어정리"
 date: 2020-04-23 14:30:28 -0400
 categories: CI/CD update
 ---
-1. Terraform : 테라폼은 인프라를 만들고 바꾸고 버전 관리하는 도구다. 테라폼 사이트에서는 테라폼이 제공하는 기능을 다음과 같이 설명하고 있다.
+1. Terraform 이란?
+: 테라폼은 인프라를 만들고 바꾸고 버전 관리하는 도구다. 테라폼 사이트에서는 테라폼이 제공하는 기능을 다음과 같이 설명하고 있다.
 
 Infrastructure as Code
 Execution Plans

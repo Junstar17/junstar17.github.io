@@ -1,3 +1,9 @@
+---
+title: "MSA 용어정리"
+date: 2020-05-11 13:30:28 -0400
+categories: MSA update
+---
+
 # MSA 란 무엇일까
 <br>
 

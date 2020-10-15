@@ -95,11 +95,11 @@ night_mode: "auto"
 #   - about.md
 
 # Page default value
-# defaults:
-home:
-  heading: "Global IT Developer's Story"
-  subheading: "개발이야기"
-  banner: "Your image url"
+defaults:
+  home:
+    heading: "Global IT Developer's Story"
+    subheading: "개발이야기"
+    banner: "Your image url"
 
 # Pagination setting
 paginate: 5

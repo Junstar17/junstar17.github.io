@@ -99,7 +99,7 @@ defaults:
   home:
     heading: "Global IT Developer's Story"
     subheading: "Cloud / FE / SW / System Trading"
-    banner: "_images/banner.jpg"
+    banner: "/assets/images/banners/banner.jpg"
 
 # Pagination setting
 paginate: 5

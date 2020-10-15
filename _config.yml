@@ -98,7 +98,7 @@ night_mode: "auto"
 defaults:
   home:
     heading: "Global IT Developer's Story"
-    subheading: "개발이야기"
+    subheading: "Cloud / FE / SW / System Trading"
     banner: "_images/banner.jpg"
 
 # Pagination setting

@@ -96,25 +96,25 @@ night_mode: "auto"
 
 # Page default value
 # defaults:
-#   home:
-#     heading: "Your awesome heading"
-#     subheading: "Your awesome subheading"
-#     banner: "Your image url"
+home:
+  heading: "Global IT Developer's Story"
+  subheading: "개발이야기"
+  banner: "Your image url"
 
 # Pagination setting
-# paginate: 5
+paginate: 5
 
 # Disqus comments
 # disqus:
 #   shortname: "Your Disqus username"
 
 # Gitment comments
-# gitment:
-#   username: "Your GitHub username"
-#   repo: "The repo to store comments"
-#   client_id: "Your client ID"
-#   client_secret: "Your client secret"
-#   redirect_uri: "Your redirect url"   # If you use a custom domain name
+gitment:
+  username: "Junstar17"
+  repo: "The repo to store comments"
+  client_id: "Your client ID"
+  client_secret: "Your client secret"
+  redirect_uri: "junstar17@github.com"   # If you use a custom domain name
 
 # Build settings
 # highlighter: none

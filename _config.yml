@@ -99,7 +99,7 @@ defaults:
   home:
     heading: "Global IT Developer's Story"
     subheading: "개발이야기"
-    banner: "Your image url"
+    banner: "_images/banner.jpg"
 
 # Pagination setting
 paginate: 5

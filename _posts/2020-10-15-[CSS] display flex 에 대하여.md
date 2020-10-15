@@ -24,7 +24,7 @@ display: flex
 ```
 위의 속성값을 지정하면 지정한 요소가 flex container가 되고 하위 요소들은 flex item이 된다. 이 둘의 관계는 `ul` 과 `li` 의 관계로 생각하면된다.
 <br><br>
-![Flex](../img/flex.png)
+![Flex](https://junstar17.github.io/img/flex.png)
 
 <br>
 위의 그림과 같이 flex의 방향에는 크게 2가지가 있다.<br>
@@ -48,7 +48,7 @@ row 값은 방향이 왼쪽에서 오른쪽으로 흐르는 방향이고, column
 
 <br>
 
-![Flex_attr](../img/flex_attr.png)
+![Flex_attr](https://junstar17.github.io/img/flex_attr.png)
 
 위의 사진설명에서 나와있듯이 부모와 자식 영역 각각에 줄 수 있는 속성은 다르다. 간략하게 먼저 살펴보면 부모 영역에서는 자식들(item)의 정렬 방향, 완전히 감싸는 유무, 아이템간의 간격, 아이템 정렬 방식(앞, 가운데, 뒤) 등의 속성을 설정할 수 있고, <br>
 자식 영역에서는 화면의 크기가 줄거나 늘어났을때 자식들간의 크기 비율에 대해 설정하는 요소들이 존재한다.<br>

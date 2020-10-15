@@ -98,7 +98,7 @@ night_mode: "auto"
 defaults:
   home:
     heading: "Global IT Developer's Story"
-    subheading: "Cloud / FE / SW / System Trading"
+    subheading: "Cloud native/ FE / SW Engineer / System Trading"
     banner: "https://junstar17.github.io/assets/images/banners/banner.jpg"
 
 # Pagination setting

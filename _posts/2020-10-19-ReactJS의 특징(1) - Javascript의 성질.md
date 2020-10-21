@@ -1,7 +1,7 @@
 ---
 subtitle: Javascript의 특징
 date: 2020-10-19 23:30:28 -0400
-categories: React 
+categories: Javascript 
 tags: [react, FE,JS]
 ---
 

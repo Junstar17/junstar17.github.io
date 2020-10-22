@@ -15,11 +15,14 @@ ReactJS는 요새 핫한 프론트앤드 라이브러리이다. ReactJS 이외�
 >- 대표적인 특징이 양방향 데이터 바인딩, 템플릿 엔진, 의존성 주입이 있습니다.
 >- MIT 라이선스를 준수합니다.
 
+<br><br>
+
 ## ReactJS vs AngularJS
 
 ![ReactJS vs AngularJS](https://junstar17.github.io/img/react_angular.png)
 
 가장 큰 특징으로는 프레임워크냐 라이브러리냐의 차이가 있고 DOM 방식이 Virtual 이냐 Real이냐의 차이가 있다.아무래도 ReactJS는 단순 라이브러리이기 때문에 AngularJS 보다는 running curve가 적고 가벼운 느낌이 있다.
+<br>
 
 ### DOM : Virtual vs Real
 
@@ -36,10 +39,12 @@ ReactJS: 단방향 방식을 쓰며 Top-Down 구조이다. 하위 컴포넌트�
 <br>
 **React의 단방향 데이터 바인딩은 일반적으로 예측 가능성이 높기 때문에 코드가 안정적이며 디버깅이 쉽다.  하지만, Angular의 전통적인 양방향 데이터 바인딩 또한 작업하기가 더 단순하다.**
 
+<br><br>
+
 ## React는 어떤 원리로 변경된 부분만 자동 리렌더링을 할까?
 
 위의 특징에서 살펴 보았듯이, ReactJS는 Data가 변경되면 그 데이터를 사용하고 있는 View 부분만 새롭게 업데이트가 된다. 페이스북 페이지 처럼 한 페이지 안에 수십개~ 수백개의 컴포넌트가 있는 SPA(Single Page Application)이라면 훨씬 고성능의 페이지로 활용될 수 있을것이다.<br>
-그러면 어떤 원리로 이런 구조가 가능할까?
+*그러면 어떤 원리로 이런 구조가 가능할까?*
 <br><br>
 
 **바로 State와 setState() 메소드에 그 기능이 담겨져 있다.**
@@ -67,6 +72,9 @@ state 객체를 private 접근권한의 객체라고 보면 되고, 반드시 �
 ```ReactJS
 this.state.number = 3 ; 
 ```
+```ReactJS
+ this.setState((state) => { age: state.age + 1 })
+ ```
 <br>
 
 하지만 ReactJS 가이드에서는 반드시 `state` 값을 변경하기 위한 방법으로는 `setState()` 함수를 사용하라고 말하고 있다. 그 이유로는 `setState() `함수를 사용하지 않으면 화면의 리렌더링이 되지 않는다고 한다.
@@ -115,8 +123,8 @@ ReactDOM.render(
 );
 ```
 
-가장먼저 ReactDOM.render() 함수가 실행되고 Clock 컴포넌트가 렌더 되는 순간 Clock 컴포넌트 클래스의 생성자 함수가 실행되게 되고, date값이 초기화 된다.
-그리고 클래스 내부의 render()함수가 실행되어 DOM 구조를 형성하게 되고, 형성이 모두 끝나면 componentDidMount() 함수가 호출되게 된다. 하지만 이 함수 내부에서는 1초  텀을 두고 state의 변수인 date을 변경하는 setState() call이 정의되어 있는 tick() 함수를 호출하게 된다. setState()가 완료되면 다시 render() 함수가 호출하게 되고 새로운 시간 값을 화면에 갱신하게 된다. 예상할 수 있듯이 이 과정은 무한적으로 반복되어 Clock 컴포너트는 자동적으로 실시간 정보를 갱신하는 컴포넌트가 된다.
+ 가장먼저 `ReactDOM.render()` 함수가 실행되고 `Clock` 컴포넌트가 렌더 되는 순간 `Clock` 컴포넌트 클래스의 `생성자` 함수가 실행되게 되고, date값이 초기화 된다.
+그리고 클래스 내부의 `render()`함수가 실행되어 DOM 구조를 형성하게 되고, 형성이 모두 끝나면 `componentDidMount()` 함수가 호출되게 된다. 하지만 이 함수 내부에서는 1초  텀을 두고 state의 변수인 date을 변경하는 `setState()` call이 정의되어 있는 `tick()` 함수를 호출하게 된다. `setState()`가 완료되면 다시 `render()` 함수가 호출하게 되고 새로운 시간 값을 화면에 갱신하게 된다. 예상할 수 있듯이 이 과정은 무한적으로 반복되어 Clock 컴포너트는 자동적으로 실시간 정보를 갱신하는 컴포넌트가 된다.
 <br>
 위의 작은 컴포넌트 에시를 통해 생각해볼 수 있듯이, 각각의 컴포넌트는 자신의 고유 state 객체를 가지고 있고, 각자 알아서 생명주기와 렌더링 flow을 가지고 있게 된다. 이 말은 즉슨, **View라는 존재가 모든 컴포넌트의 업데이트 주기를 한꺼번에 관리하고 있는 것이 아니라, 각각의 컴포넌트들이 알아서 각자의 렌더링 주기와 요소들을 컨트롤 한다는 뜻이 된다.**
 <br><br>

@@ -16,6 +16,8 @@ S2I의 특징은 다음과 같습니다. <br>
 - User efficiency - S2I prevents developers from performing arbitrary yum install type operations during their application build, which results in slow development iteration.
 - Ecosystem - S2I encourages a shared ecosystem of images where you can leverage best practices for your applications.
 
+<br>
+
 ## S2I 실행 순서
 
 S2I는 우선 소스코드를 통해 도커이미지를 생성합니다. 이미지가 생성되면 해당 이미지를 빌드합니다. S2I 프로젝트에는 일반적으로 사용하는 도커이미지들이 포함되어 있습니다.(파이썬, 루비 등등..)
@@ -29,6 +31,7 @@ S2I는 우선 소스코드를 통해 도커이미지를 생성합니다. 이미�
 
 결국 Builder image가 실행되면 application source 를 다운 받고, assemble script가 실행되어 최종 이미지를 생성하고 internal image registry에 최종 이미지를 저장하게 됩니다. <br>
 
+<br>
 **Builder image의 필수 요건**
 1. builder image에는 application을 빌드하고 실행하기 위한 모든 라이브러리 및 툴들이 포함되어 있어야 합니다. <br>
 1.  빌드 및 실행 작업을 수행하기 위한 스크립트 로직이 필요합니다.

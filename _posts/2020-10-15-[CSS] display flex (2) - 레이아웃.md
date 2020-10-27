@@ -6,7 +6,7 @@ categories: CSS
 tags: [css, FE, flex,layout]
 ---
 
-# 서론
+## 서론
 
 이전 포스팅에서 알아본 display: flex 타입에 대해 다양한 예시들과 함께 디테일한 속성값의 사용에 대해 알아보고자 한다.
 <br><br>
@@ -18,9 +18,10 @@ flex-direction 속성은 container 영역의 속성값으로 flex- item들의 �
 - column : 위에서 아래
 
 이렇게 2가지 값이 올 수 있다.
+
 ![flex-direction](https://junstar17.github.io/img/flex-direction.png)
 
-<br>
+<br><br>
 
 ## flex
 flex 값은 flex-item 영역의 속성값으로 item들의 크기를 나타내는 속성값이다.
@@ -30,6 +31,7 @@ flex라는 속성값은 3가지의 속성을 축약하여 표현한 것으로 �
 - `flex-basis`
 
 이렇게 3가지의 속성을 내포하고 있다.
+<br>
 
 ![flex](https://junstar17.github.io/img/flex-child.png)
 
@@ -37,7 +39,7 @@ flex라는 속성값은 3가지의 속성을 축약하여 표현한 것으로 �
 
 위의 그림처럼 순서대로 각각의 속성값을 의미하는 값이고, flex: 1 1 0은 다음과 같이 `flex`: 1로 표현할 수도 있다. `flex`에 한자리 값만 나타내게 되면 이것은 `flex-grow`의 값을 설정한 것이고, 나머지 `flex-shrink` : 1 , `flex-basis` : 0 으로 자동적으로 설정됨을 의미한다.
 
-<br>
+<br><br>
 
 ### flex-grow
 flex-grow 속성은 flex item의 확장에 관련된 속성이다. 0과 양의 정수를 속성값에 사용한다. flex-item의 크기는 flex-container의 영향을 받을 수 있는데, <br>
@@ -47,7 +49,7 @@ flex-grow 속성은 flex item의 확장에 관련된 속성이다. 0과 양의 �
 
 ![flex-grow](https://junstar17.github.io/img/flex-grow.png)
 
-<br>
+<br><br>
 
 ### flex-shrink
 flex-shrink는 flex-grow와 반대적인 의미로 확장이 아닌 축소를 나타내는 값이다.
@@ -63,7 +65,7 @@ flex-shrink는 flex-grow와 반대적인 의미로 확장이 아닌 축소를 �
 
 ![flex-shrink](https://junstar17.github.io/img/flex-shrink.png)
 
-<br>
+<br><br>
 
 ### flex-basis
 
@@ -72,6 +74,7 @@ flex-basis 속성은 flex item의 기본 크기를 결정하는 속성이다. �
 <br>
 
 ![고정flex-basis](https://junstar17.github.io/img/고정flex-basis.png)
+
 <br><br>
 고정된 크기 이외에 flex-container의 크기에 의존적으로 설정하는 2가지 방식이 있다.
 

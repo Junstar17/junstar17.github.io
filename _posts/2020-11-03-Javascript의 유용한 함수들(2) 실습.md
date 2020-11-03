@@ -30,7 +30,7 @@ tags: [Javascript, FE, Array]
 
 ```javascript
 const models = [{
-  id: "string"
+  id: "model1"
   attributes : [{
     attribute: "attr1"
     values: [
@@ -94,10 +94,11 @@ const selected_filter = [
 
 위의 요구조건을 만족하는 원소를 찾기 위해서는
 models 배열의 전체를 돌며, attribute 배열을 전체 돌며, values 배열을 전체 돌며 일치하는 value가 존재하는지 찾아야 하는데, 이때 찾고자 하는 원소도 이미 나타나있는 원소가 아니라 , <br>
+
 selected_filter배열의 values 배열을 돌아야 찾을 수 있는 값이다.
 
-models 배열에서는 총 삼중 for문이 돌고,
-selected_filter 배열에서는 총 이중 for문이 돌게 되는 어마어마한 탐색 횟수이다.
+models 배열에서는 총 `삼중 for문`이 돌고,
+selected_filter 배열에서는 총 `이중 for문`이 돌게 되는 어마어마한 탐색 횟수이다.
 
 아래 코드는 실제 위의 요구사항을 만족시키는 탐색을 하기 위한 Basic 한 for문 코드와 array 라이브러리 함수를 사용한 코드 2가지 방법을 제시한다.
 
@@ -159,4 +160,4 @@ models.forEach(model => model.attributes?.map(attr => {
 
 `JS Array Lib 코드`의 수행 시간은 `0.235107421875ms` 로 대략 **`38배`** 정도의 연산 속도 차이를 보였다.
 
-이처럼 JS에서는 array와 관련된 library를 사용하고 안하고의 차이가 굉장한 연산 속도 차이를 보이므로 각각의 케이스에 맞게 잘 사용할 수록 좋은 코드를 짤 수 있다.
+이처럼 JS에서는 array와 관련된 library를 사용하고 안하고의 차이가 굉장한 연산 속도 차이를 보이므로 각각의 케이스에 맞게 적절한 라이브러리를 사용하여 효율적인 코드를 짜도록 하자.

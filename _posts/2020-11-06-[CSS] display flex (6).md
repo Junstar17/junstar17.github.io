@@ -6,7 +6,7 @@ categories: CSS
 tags: [css, FE, flex,layout]
 ---
 
-## 서론 <hr>
+## 서론
 
 이전 포스팅에 이어 flex style에 대해 깊게 알아보도록 한다.
 

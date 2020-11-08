@@ -1,5 +1,4 @@
 ---
-title: "flex layout"
 subtitle: css flex
 date: 2020-10-27 23:30:28 -0400
 categories: CSS 

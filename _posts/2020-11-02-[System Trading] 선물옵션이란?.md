@@ -1,5 +1,4 @@
 ---
-title: "선물옵션의 개념"
 subtitle: System Trading Stock
 date: 2020-11-02 23:30:28 -0400
 categories: SystemTrading

@@ -13,11 +13,11 @@ tags: [SystemTrading]
 ## Flow chart
 
 1. 실시간 데이터 기반의 데이터 처리 <br>
-![프로젝트아키텍처1](https://junstar17.github.io/img/프로젝트아키텍처1.png)
+![프로젝트아키텍처1](https://junstar17.github.io/img/프로젝트아키텍처1.jpg)
 
 
 2. 분산 DB 환경에서의 데이터 처리<br>
-![프로젝트아키텍처2](https://junstar17.github.io/img/프로젝트아키텍처2.png)
+![프로젝트아키텍처2](https://junstar17.github.io/img/프로젝트아키텍처2.jpg)
 
 
 

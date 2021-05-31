@@ -5,6 +5,9 @@ categories: DB
 tags: [DB]
 ---
 
+## 서론
+이 포스팅은 개인적인 공부와 정리를 목적으로 다른 블로그의 글들을 짜집기한 내용들임을 밝힙니다.
+
 ## In memory DB
 
 in-memory DB는 disk-based DB와 달리 말 그대로 메모리에 데이터를 저장한다.

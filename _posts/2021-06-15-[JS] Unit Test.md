@@ -6,6 +6,7 @@ tags: [Javascript, UnitTest]
 ---
 
 ## Unit Test란
+<hr>
 
 개발을 진행하면 반드시 해당 구현 코드에 문제가 없는지 검증이 이루어져야한다. 검증 없이 무분별하게 master branch에 merge 된다면 dev 환경이라 할지라도 가동에 문제가 생기기 마련이다. 다수의 개발자가 모여 프로젝트를 진행한다면 반드시 수행해야할 영역중에 한 부분이다.
 <br>
@@ -14,8 +15,10 @@ tags: [Javascript, UnitTest]
 Unit Test에도 여러가지 종류와 방법이 있지만 이 포스팅에서는 React 프로젝트의 기본 유닛별 테스트 하는 간단한 설명과 Unit Test에서 필요한 문법들에 대해 정리할 예정이다.
 <br>
 <br>
+<br>
 
 ## React unit Test
+<hr>
 
 React는 감사하게도 `create-react-app`을 통해 초기 프로젝트 구성을 갖추면 테스트에 대한 템플릿 파일도 자동으로 생성된다. 이때 `Jest` 모듈이 자동으로 사용된다. `Jest`는 모의 모듈 및 타이머, 그리고 jsdom 지원 등 여러 기능을 지원하는 React 프로젝트와 광범위하게 호환된다.
 테스트에 범위에 관해서도 렌더링,함수,모듈 등의 다양한 테스트 범위가 존재하지만 여기서는 깊게 다루진 않을 예정이고, Controller.js 위주로 test script를 만들고 있기 때문에 함수 단위의 테스트에 관해서만 진행할 예정이다.
@@ -106,16 +109,47 @@ it('sample test', () => {
 
 Branches 커버리지 분석결과 2개의 분기문 중 하나만 실행되어 50%의 측정 수치가 나왔다. 
 
-#### 1.Branches Coverage
+<br>
+
+#### 2.Functions Coverage
+이번에는 Functions Coverage가 어떻게 이뤄지는지 알아보자. Sample.js에 sub() 함수를 만들고 테스트를 수행하면 아래 결과가 나온다.
+
+```javascript
+class Sample {
+    add = (a, b) => {
+        if (a === null) {
+          a = 0
+        }
+        return a + b
+    }
+
+    sub = (a, b) => {
+        return a - b
+    }
+}
+export default Sample; I I 
+```
+<br>
+
+![React_Test3](https://junstar17.github.io/img/react_test_result4.png)
+
+<br>
+
+총 2개의 함수중 1개만 실행되었기 때문에 50%으로 줄었다.
+
+<br>
+
+#### 3.Statements Coverage, Lines Coverage
+
+이 커버리지는 비슷한 성격으로 전체 코드라인(명령문) 중 얼마나 실행되었는지 측정하는 분석이다. 원리는 위에 설명한 것들과 비슷하다.
+
+<br><br>
+위의 정리들을 통해 Unit Test가 어떤식으로 실행되고 그에 대한 결과는 어떤식으로 나오는지 확인해보았다. 다음 포스팅에서는 이러한 Unit Test를 수행할때 유용한 모듈들을 정리해보도록 할 예정이다.
 
 
-#### 1.Branches Coverage
-
-#### 1.Branches Coverage
-
+<br><br>
 
 <hr>
 
 **Reference** <br>
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures <br>
-https://poiemaweb.com/js-closure
+https://jeonghwan-kim.github.io/2016/07/28/istanbul.html

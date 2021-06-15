@@ -29,22 +29,30 @@ yarn test
 ```
 위의 명령어를 실행하면 아래와 같은 결과가 콘솔에 찍힌다.
 
-![JS Array Lib](https://junstar17.github.io/img/react_test_result.png)
+![React_Test](https://junstar17.github.io/img/react_test_result.png)
 
 해당 명령어가 실행되는 이유는 `package.json` 파일의 script 영역을 보면 이미 `yarnt test`에 대한 명령문이 정의되어 있기 때문이다.
+<br>
 
-![JS Array Lib](https://junstar17.github.io/img/react_package.png)
+![React_Package](https://junstar17.github.io/img/react_package.png)
 
+<br>
 
 좀 더 상세한 테스트 결과를 분석하기 위해 몇가지 옵션을 추가하도록 한다.
+<br>
 
 ```
 "test": "react-scripts test --watchAll --coverage --transformIgnorePatterns",
 ```
+<br>
 
 해당 옵션을 추가하게되면 아래의 결과 사진과 같이 모든 파일을 검사하게 되고, 각 파일별 coverage 세부 점수에 대해서도 테이블로 표현된다.
+<br>
 
-![JS Array Lib](https://junstar17.github.io/img/react_test_result2.png)
+
+![React_Test2](https://junstar17.github.io/img/react_test_result2.png)
+
+<br>
 
 결과에는 4가지 영역에 대한 테스트 만족 퍼센티지가 존재한다.
 
@@ -55,6 +63,12 @@ yarn test
 *  Uncovered Line #s : 실행되지 않은 line number
 
 좀더 상세히 알아보기 위해 테스트 코드를 하나 생성하여 테스트해보도록 한다.
+
+<br><br>
+
+### 2. 테스트 
+
+<br>
 
 아래는 테스트가 필요한 Sample class 와 이를 테스트할 test.js 파일이다.
 ```javascript
@@ -80,7 +94,24 @@ it('sample test', () => {
 
 위의 스크립트를 작성하고 테스트를 실행하면 결과가 아래와 같이 나온다.
 
-![JS Array Lib](https://junstar17.github.io/img/react_test_result4.png)
+
+![React_Test3](https://junstar17.github.io/img/react_test_result3.png)
+
+위와 같은 커버리지가 나온 이유에 대해 살펴보도록 하자.
+
+<br>
+<br>
+
+#### 1.Branches Coverage
+
+Branches 커버리지 분석결과 2개의 분기문 중 하나만 실행되어 50%의 측정 수치가 나왔다. 
+
+#### 1.Branches Coverage
+
+
+#### 1.Branches Coverage
+
+#### 1.Branches Coverage
 
 
 <hr>

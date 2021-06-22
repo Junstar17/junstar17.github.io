@@ -1,8 +1,8 @@
 ---
 subtitle: Javascript의 특징 - Promise
 date: 2020-10-21 23:30:28 -0400
-categories: Javascript 
-tags: [react, FE,JS]
+categories: React 
+tags: [React]
 ---
 
 ## 서론

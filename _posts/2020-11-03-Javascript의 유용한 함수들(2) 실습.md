@@ -2,7 +2,7 @@
 subtitle: Javascript Array
 date: 2020-11-03 23:30:28 -0400
 categories: Javascript 
-tags: [Javascript, FE, Array]
+tags: [Javascript]
 ---
 
 ## 서론

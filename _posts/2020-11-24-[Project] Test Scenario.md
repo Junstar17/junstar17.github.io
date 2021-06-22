@@ -1,8 +1,8 @@
 ---
 subtitle: Test case
 date: 2020-11-24 23:30:28 -0400
-categories: Front-End 
-tags: [UI, TESTSCRIPT]
+categories: Project
+tags: [Project]
 ---
 
 ## 서론

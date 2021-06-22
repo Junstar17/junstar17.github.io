@@ -1,8 +1,8 @@
 ---
 subtitle: ReactJS - Pending State
 date: 2020-11-09 23:30:28 -0400
-categories: Front-End 
-tags: [UI, FE]
+categories: React 
+tags: [React]
 ---
 
 ## 서론

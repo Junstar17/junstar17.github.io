@@ -2,7 +2,7 @@
 subtitle: Big-O
 date: 2020-11-14 23:30:28 -0400
 categories: CodingInterview 
-tags: [Coding, Interview]
+tags: [CodingInterview]
 ---
 
 ## 서론

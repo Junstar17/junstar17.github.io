@@ -2,7 +2,7 @@
 subtitle: css flex
 date: 2020-10-15 23:30:28 -0400
 categories: CSS 
-tags: [css, FE, flex]
+tags: [css]
 ---
 
 # 서론

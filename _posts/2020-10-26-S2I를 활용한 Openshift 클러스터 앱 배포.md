@@ -1,7 +1,7 @@
 ---
 subtitle: S2I
 date: 2020-10-26 23:30:28 -0400
-categories: CloudNative
+categories: Cloud
 tags: [S2I, Cloud, CI/CD]
 ---
 

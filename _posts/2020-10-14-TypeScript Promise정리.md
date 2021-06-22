@@ -1,7 +1,8 @@
 ---
 title: "TypeScript에서의 Promise"
 date: 2020-10-14 23:30:28 -0400
-categories: TypeScript 
+categories: TypeScript
+tags: [TypeScript] 
 ---
 
 # 1. Promise란 ? (JS)

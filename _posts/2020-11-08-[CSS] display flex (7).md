@@ -3,7 +3,7 @@ title: "[CSS] display flex (7)"
 subtitle: css flex
 date: 2020-11-08 23:30:28 -0400
 categories: CSS 
-tags: [css, FE, flex,layout]
+tags: [CSS, FE, flex,layout]
 ---
 
 ## 서론

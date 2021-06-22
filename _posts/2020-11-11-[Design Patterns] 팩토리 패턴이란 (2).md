@@ -1,8 +1,8 @@
 ---
 subtitle: Factory pattern
 date: 2020-11-11 23:30:28 -0400
-categories: Front-End 
-tags: [UI, FE]
+categories: DesignPatterns
+tags: [DesignPatterns, Java]
 ---
 
 ## 서론

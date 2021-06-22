@@ -1,8 +1,8 @@
 ---
 subtitle: System Trading Stock
 date: 2020-11-02 23:30:28 -0400
-categories: System Trading
-tags: [System Trading, Stock]
+categories: SystemTrading
+tags: [System Trading]
 ---
 
 # 서론

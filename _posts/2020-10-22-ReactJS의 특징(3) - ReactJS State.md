@@ -1,8 +1,8 @@
 ---
 subtitle: ReactJS 특징 - State
 date: 2020-10-22 23:30:28 -0400
-categories: ReactJS 
-tags: [react, FE,JS]
+categories: React 
+tags: [React]
 ---
 
 ## 서론

@@ -1,7 +1,7 @@
 ---
 subtitle: System Trading service Architecture
 date: 2020-11-21 23:30:28 -0400
-categories: System Trading 
+categories: SystemTrading 
 tags: [SystemTrading]
 ---
 

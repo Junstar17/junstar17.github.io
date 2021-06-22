@@ -1,8 +1,8 @@
 ---
 subtitle: FE
 date: 2020-11-26 23:30:28 -0400
-categories: Front-End 
-tags: [UI, FE]
+categories: Project
+tags: [Project]
 ---
 
 ## 서론

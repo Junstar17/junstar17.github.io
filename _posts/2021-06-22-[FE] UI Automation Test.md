@@ -1,6 +1,6 @@
 ---
 subtitle: UI Automation test
-date: 2021-06-17 23:30:28 -0400
+date: 2021-06-22 23:30:28 -0400
 categories: FrontEnd
 tags: [FrontEnd,Javascript]
 ---

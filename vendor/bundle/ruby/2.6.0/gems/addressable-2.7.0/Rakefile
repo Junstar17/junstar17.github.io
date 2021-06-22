@@ -6,7 +6,7 @@ require 'rake'
 require File.join(File.dirname(__FILE__), 'lib', 'addressable', 'version')
 
 PKG_DISPLAY_NAME   = 'Addressable'
-PKG_NAME           = PKG_DISPLAY_NAME.downcase
+PKG_NAME           = PKG_DISPLAY_NAME
 PKG_VERSION        = Addressable::VERSION::STRING
 PKG_FILE_NAME      = "#{PKG_NAME}-#{PKG_VERSION}"
 

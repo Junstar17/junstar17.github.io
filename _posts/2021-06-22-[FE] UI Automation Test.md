@@ -40,7 +40,7 @@ WebdriverIO란 Node.js에서 Selenium WebDriver를 조작할 수 있는 npm pack
 <br>
 
 
-![셀레니움아키텍처](https://junstar17.github.io/img/셀레니움아키텍처.png)
+![셀레니움아키텍처](https://junstar17.github.io/img/셀레니움아키텍처.png)
 
 
 <br>

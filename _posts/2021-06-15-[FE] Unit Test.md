@@ -1,8 +1,8 @@
 ---
-subtitle: JS Unit Test
+subtitle: FrontEnd Unit Test
 date: 2021-06-15 23:30:28 -0400
-categories: Javascript
-tags: [Javascript, UnitTest]
+categories: FrontEnd
+tags: [Javascript, UnitTest,FrontEnd]
 ---
 
 ## Unit Test란

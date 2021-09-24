@@ -59,26 +59,33 @@ props의 message값이 바뀌었을때만 해당 render 영역이 재생성된�
 
 <br><br>
 
+## 5. React.memo
 
-## 5. 거대한 리스트 데이터 가상화
+특정 view component를 React.memo로 감싸서 생성하게 되면 해당 컴포넌트가 전달받은 props를 1차 레벨 비교를 하여 같다면 리렌더링하지 않게 막아준다. 아래 코드에서는 전달받은 index, name, age, click 값이 변하지 않았다면 자식 컴포넌트인 Person 컴포넌트의 리렌더링을 막아준다.
+
+![](../img/2021-09-25-02-47-54.png)
+
+<br><br>
+
+## 6. 거대한 리스트 데이터 가상화
  많은 양의 데이터를 List에 나타낼때는 react-virtualized를 사용하여 viewport에 보여지는 부분만 렌더링 하고 나머지는 스크롤할 때 보여지도록 처리한다.
 
 <br><br>
 
-## 6. Caching functions
+## 7. Caching functions
 함수 실행이 오래 걸릴 경우, 렌더링 하는 나머지 부분이 대기하게 되어 사용자들에게 긴 로딩시간을 줄 수 있다. 따라서 아래 예시 코드 처럼 컴포넌트 안에 데이터의 양이 큰 부분이 있다면 별도로 분리하여 해당 부분을 메모이제이션 함수로 감싼 후 처리하게 되면 입력값이 같을 경우 캐시된 값을 리턴하여 실행을 더 빠르게 만들 수 있다.
 ![image](https://user-images.githubusercontent.com/29361653/134712288-d23725ba-0438-4fa3-b74c-b1747e583702.png)
 ![image](https://user-images.githubusercontent.com/29361653/134712465-f0f4a3f0-72aa-44b3-9992-09bf716fa333.png)
 
 <br><br>
 
-## 7. shouldComponentUpdate() 사용
+## 8. shouldComponentUpdate() 사용
 해당 컴포넌트에서 사용되는 state 값이 동일 할 때는 리렌더링 되지 않도록 처리하는 코드가 필요하다.
 ![image](https://user-images.githubusercontent.com/29361653/134713999-a73d5c23-66e7-4f1e-a0d0-ea7911aab96a.png)
 
 <br><br>
 
-## 8. 부모 자식 컴포넌트의 관계 느슨화
+## 9. 부모 자식 컴포넌트의 관계 느슨화
 ![image](https://user-images.githubusercontent.com/29361653/134714452-79cd9dcb-b4ea-412e-ab0a-ed839f2595c3.png)
 ![image](https://user-images.githubusercontent.com/29361653/134714465-102ec660-61c4-4d55-b221-69d8cddfacd4.png)
 

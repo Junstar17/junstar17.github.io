@@ -43,9 +43,9 @@ func = {()=> setCount(count+1)}  이 경우 렌더링 될때마다 새로 생성
 
 아래 코드의 경우 첫번째 버튼을 클릭했을때 콘솔창에
 '버튼1 1 0 ' 이렇게 3개의 텍스트가 찍힌다. 그 이유는 count1 state가 변하게 되면 Counter 컴포넌트가 리렌더링 하게 되고, 그때 increment1, increment2 함수가 재생성되게 된다. 그러면 이 함수의 참조값이 변하기 때문에 Button 컴포넌트가 props의 변경으로 인지하여 Button 또한 리렌더링 되는것이다. 이런 경우를 막기 위해 useCallback을 사용하여 해당 함수가 변하는 경우에만 함수가 재생성되도록 처리할 수 있다.
-![](../img/2021-09-25-02-36-29.png)
+![](https://junstar17.github.io/img/2021-09-25-02-36-29.png)
 
-![](../img/2021-09-25-02-39-47.png)
+![](https://junstar17.github.io/img/2021-09-25-02-39-47.png)
 <br><br>
 
 ## 4. 값 메모이제이션 ( useMemo)
@@ -63,7 +63,7 @@ props의 message값이 바뀌었을때만 해당 render 영역이 재생성된�
 
 특정 view component를 React.memo로 감싸서 생성하게 되면 해당 컴포넌트가 전달받은 props를 1차 레벨 비교를 하여 같다면 리렌더링하지 않게 막아준다. 아래 코드에서는 전달받은 index, name, age, click 값이 변하지 않았다면 자식 컴포넌트인 Person 컴포넌트의 리렌더링을 막아준다.
 
-![](../img/2021-09-25-02-47-54.png)
+![](https://junstar17.github.io/img/2021-09-25-02-47-54.png)
 
 <br><br>
 

@@ -68,6 +68,20 @@ React.memo는 shouldComponentUpdate 라이프 사이클을 내장하고 있는 �
 
 ![](https://junstar17.github.io/img/2021-09-25-02-47-54.png)
 
+
+또한 리덕스를 사용하는 경우 useSelector,useDispatch 를 사용하는 경우와 connect를 사용하는 경우에도 약간의 차이가 있다. connect함수를 사용하는 경우 해당 컨테이너 컴포넌트의 부모 컴포넌트가 리렌더링될 때 해당 컴포넌트의 props가 바뀌지 않았다면 리렌더링이 자동으로 방지되지만 hook은 그렇지 않기 때문에 props가 변경되지 않을때 리렌더링을 방지하려면 React.memo를 컨테이너 컴포넌트에 감싸서 처리해줘야 한다.
+
+
+React.memo의 두번째 인자로 shouldComponentUpdate 디테일 처리를 할 수 있다. 즉 어떤 state가 변할때만 해당 컴포넌트를 업데이트할지 직접 명시할 수 있다.
+
+```Javascript
+export default React.memo(
+  UserList,
+  (prevProps, nextProps) => prevProps.users === nextProps.users
+);
+```
+
+
 <br><br>
 
 ## 5. 값 메모이제이션 ( useMemo)
@@ -95,7 +109,7 @@ props의 message값이 바뀌었을때만 해당 render 영역이 재생성된�
 
 <br><br>
 
-## 8. shouldComponentUpdate() 사용
+## 8. shouldComponentUpdate() 사용 (React.memo와 동일)
 해당 컴포넌트에서 사용되는 state 값이 동일 할 때는 리렌더링 되지 않도록 처리하는 코드가 필요하다.
 ![image](https://user-images.githubusercontent.com/29361653/134713999-a73d5c23-66e7-4f1e-a0d0-ea7911aab96a.png)
 
@@ -106,3 +120,127 @@ props의 message값이 바뀌었을때만 해당 render 영역이 재생성된�
 ![image](https://user-images.githubusercontent.com/29361653/134714465-102ec660-61c4-4d55-b221-69d8cddfacd4.png)
 
 위와 같은 코드를 아래 코드로 변경하게 되면 Parent 컴포넌트가 렌더링하더라도 Child 컴포넌트는 리렌더링 하지 않는다. 단 위의 경우는 Child 컴포넌트가 Parent로 부터 state 값을 넘겨 받을게 없는 구조일때 가능하다. 따라서 redux를 사용하는 프로젝트라면 부모와 자식간의 state 전달이 적기 때문에 해당 방법으로 부모-자식 간의 리렌더링 최소화를 구현할 수 있다.
+
+<br><br>
+
+## 10. useState 사용시 함수형 업데이트 사용
+
+아래 샘플코드에서 보면 `users` 라는 리스트를 사용하는 onCreate,onRemove, onToggle 이렇게 3가지 콜백함수가 있다. 이 안에는 모두 `users` 를 의존성인자로 받고 있기 때문에 `users` 어떤 함수에서든지 리스트 값이 변하게되면 모든 콜백함수들이 새로 생성되게 된다. 그러면 이를 props로 받는 컴포넌트들도 리렌더링 되게 된다.
+
+```Javascript
+const onCreate = useCallback(() => {
+  const user = {
+    id: nextId.current,
+    username,
+    email
+  };
+  setUsers(users.concat(user));
+
+  setInputs({
+    username: '',
+    email: ''
+  });
+  nextId.current += 1;
+}, [users, username, email]);
+
+const onRemove = useCallback(
+  id => {
+    // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+    // = user.id 가 id 인 것을 제거함
+    setUsers(users.filter(user => user.id !== id));
+  },
+  [users]
+);
+const onToggle = useCallback(
+  id => {
+    setUsers(
+      users.map(user =>
+        user.id === id ? { ...user, active: !user.active } : user
+      )
+    );
+  },
+  [users]
+);
+```
+이를 해결하기 위해 어떤 방식을 해야할까 ?  바로 useState 안에 함수형 업데이트 방식으로 업데이트를 시키는 방법으로 해결할 수 있다.
+
+```Javascript
+const onCreate = useCallback(() => {
+    const user = {
+      id: nextId.current,
+      username,
+      email
+    };
+    setUsers(users => users.concat(user));
+
+    setInputs({
+      username: '',
+      email: ''
+    });
+    nextId.current += 1;
+  }, [username, email]);
+
+  const onRemove = useCallback(id => {
+    // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+    // = user.id 가 id 인 것을 제거함
+    setUsers(users => users.filter(user => user.id !== id));
+  }, []);
+  const onToggle = useCallback(id => {
+    setUsers(users =>
+      users.map(user =>
+        user.id === id ? { ...user, active: !user.active } : user
+      )
+    );
+  }, []);
+```
+
+위 코드처럼 콜백 함수의 두번째 파라미터에 `users` 의존성을 제거하더라도 useState 안에서 콜백함수의 파라미터에서 최신 users 를 참조 할 수 있기 때문에 정상적으로 동작하게 된다. 의존성을 제거하였기 때문에 onRemove, onCreate, onToggle 은 users 와 독립적으로 존재하게 된다. 따라서 해당 함수를 사용하는 컴포넌트들의 리렌더링도 막을 수 있다.
+
+- React.memo
+- useCallback
+- useState 함수형 업데이트
+
+이 3가지는 반드시 함께 이뤄저야 최적화 효과가 나타난다는 것을 명심해야하 한다.
+
+<br><br>
+
+## 11. 컨테이너 컴포넌트 최적화
+useSelector를 사용할때는 한 코드당 하나의 state 값만 가져와서 사용하도록 한다 ( 2개이상 한번에 가져오지 않기)
+
+```Javascript
+
+const { number, diff } = useSelector(state => ({
+  number: state.counter.number,
+  diff: state.counter.diff
+}));
+
+```
+수정 코드
+
+```Javascript
+
+const number = useSelector(state => state.counter.number);
+const diff = useSelector(state => state.counter.diff);
+
+```
+
+<br><br>
+
+
+## 12. ReSelect 의 사용(Optional)
+
+Redux를 사용하는 프로젝트라면 유용한 라이브러리다. selector은 store로부터 온 데이터를 가져오거나 계산하는 역할을 하며 인자가 변경되지 않을 때 다시 계산하지 않는 역할을 한다. useMemo와 비슷한 역할로 보인다. reselect는 redux와 함께 사용되면 유용한 라이브러리 이고, useMemo의 경우 hook이기 때문에 함수형 컴포넌트에서만 사용할 수 있다는 차이가 있다.
+
+사용 예시
+
+```Javascript
+const getBmi = createSelector(
+  // 맨 아래 함수를 제외한 함수들을 Input Selector 라고도 한다.
+  getHeight,
+  getWeight,
+  // 맨 아래 함수를 Result Selector 라고도 한다.
+  (height, weight) => (weight / height ** 2)
+);
+```
+
+<br><br>

@@ -17,7 +17,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://junstar17.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: "" # the favicon for your site
 theme: jekyll-theme-yat
-
+remote_theme: hydecorp/yat
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 yat:
@@ -114,7 +114,7 @@ gitment:
   repo: "The repo to store comments"
   client_id: "Your client ID"
   client_secret: "Your client secret"
-  redirect_uri: "junstar17@github.com"   # If you use a custom domain name
+  redirect_uri: "junstar17@github.com" # If you use a custom domain name
 
 # Build settings
 # highlighter: none
